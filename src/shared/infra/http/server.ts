@@ -1,12 +1,14 @@
 import express from 'express'
 
-import serverRoutes from './routes'
+import Routes from './routes'
+import validateJsonBody from './middlewares/validateJsonBody'
 
 const server = express()
-const PORT = 7777
+const PORT = process.env.PORT || 7777
 
-server.use(serverRoutes)
+server.use(express.json({ verify: validateJsonBody }))
+server.use(Routes)
 
 server.listen(PORT, () => {
-  console.log(`O servidor esta online! PORTA: ${PORT}`)
+  console.log(`🚀 O servidor esta online! PORTA: ${PORT}`)
 })

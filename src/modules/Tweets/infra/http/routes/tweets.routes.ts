@@ -1,9 +1,10 @@
 import { Router } from 'express'
 
-const tweetsRouter = Router()
+import TweetsController from '../controllers/TweetsController'
 
-tweetsRouter.get('/', (req, res) => {
-  res.json({ okay: true })
-})
+const tweetsRouter = Router()
+const tweetsController = new TweetsController()
+
+tweetsRouter.post('/', tweetsController.create)
 
 export default tweetsRouter
