@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "url": "postgres://uzyqhktp:BS8NoM814eGLeeQwdQr6gbtlczFTdSIT@tuffi.db.elephantsql.com/uzyqhktp",
+    "synchronize": true,
+    "logging": true,
+    "migrations": [
+        "./src/shared/typeorm/migrations/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "./src/shared/typeorm/migrations"
+    }
+}

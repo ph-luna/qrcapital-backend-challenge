@@ -1,4 +1,5 @@
 import express from 'express'
+import '@shared/typeorm'
 
 import Routes from './routes'
 import validateJsonBody from './middlewares/validateJsonBody'
