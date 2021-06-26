@@ -1,9 +1,9 @@
 import { Router } from 'express'
 
+import TweetsRoutes from '@modules/Tweets/infra/http/routes/tweets.routes'
+
 const serverRouter = Router()
 
-serverRouter.get('/', (req, res) => {
-  res.json({ okay: true })
-})
+serverRouter.use('/tweets', TweetsRoutes)
 
 export default serverRouter
