@@ -1,6 +1,6 @@
 # Desafio: QR Capital Backend Pleno
 
-Desafio proposto pela QR Capital, consiste basicamente em criar uma **RestAPI** para cadastrar comentários (Tweets) de pessoas e avaliar sua opinião utilizando um modelo de análise de sentimentos de textos **VADER**, cadastrar a pontuação e depois retornar em um EndPoint pesquisando pelo nome, a opinião média (positiva ou negativa) e a pontuação média.
+Desafio proposto pela QR Capital, consiste basicamente em criar uma **RestAPI** para cadastrar comentários (Tweets) de pessoas e avaliar sua opinião utilizando um modelo de análise de sentimentos de textos **VADER**, cadastrar a pontuação e depois retornar em um **EndPoint** pesquisando pelo nome, a opinião média (positiva ou negativa) e a pontuação média.
 
 Para executar o projeto instale as dependencias utilizando o comando _yarn_ na raíz do projeto.
 
