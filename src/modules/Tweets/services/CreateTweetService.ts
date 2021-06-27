@@ -1,4 +1,5 @@
 import { inject, injectable } from 'tsyringe'
+import vader from 'vader-sentiment'
 
 import IPostTweetDTO from '../DTOS/IPostTweetDTO'
 
@@ -12,7 +13,7 @@ class CreateTweetService {
   ) {}
 
   async execute ({ author, text, link }: IPostTweetDTO): Promise<string> {
-    const compound = 0.5
+    const { compound } = vader.SentimentIntensityAnalyzer.polarity_scores(text)
     const date = new Date()
 
     await this.tweetsRepository.create({ author, text, link, compound, date })
