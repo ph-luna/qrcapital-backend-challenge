@@ -19,4 +19,10 @@ export default class TweetsRepository implements ITweetsRepository {
 
       return newTweet
     }
+
+    async listByAuthor (author: string): Promise<Tweet[]> {
+      const tweets = await this.ormRepository.find({ where: { author } })
+
+      return tweets
+    }
 }

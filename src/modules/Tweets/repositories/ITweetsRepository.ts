@@ -4,4 +4,5 @@ import Tweet from '../infra/typeorm/entities/Tweet'
 
 export default interface ITweetsRepository {
     create(data: ICreateTweetDTO): Promise<Tweet>
+    listByAuthor(data: string): Promise<Tweet[]>
 }

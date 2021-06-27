@@ -12,13 +12,11 @@ class CreateTweetService {
     private tweetsRepository: ITweetsRepository
   ) {}
 
-  async execute ({ author, text, link }: IPostTweetDTO): Promise<string> {
+  async execute ({ author, text, link }: IPostTweetDTO): Promise<void> {
     const { compound } = vader.SentimentIntensityAnalyzer.polarity_scores(text)
     const date = new Date()
 
     await this.tweetsRepository.create({ author, text, link, compound, date })
-
-    return 'Tweet salvo com sucesso.'
   }
 }
 

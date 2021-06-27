@@ -10,8 +10,8 @@ export default class TweetsController {
     const { author, text, link } = req.body as IPostTweetDTO
     const createTweetService = container.resolve(CreateTweetService)
 
-    const message = await createTweetService.execute({ author, text, link })
+    await createTweetService.execute({ author, text, link })
 
-    return res.json({ message })
+    return res.sendStatus(200)
   }
 }
