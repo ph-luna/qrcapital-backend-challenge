@@ -12,6 +12,8 @@ module.exports = {
     ],
 
     plugins: [
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        "@babel/plugin-proposal-class-properties",
         ['module-resolver', {
             alias: {
                 '@modules': './src/modules',
@@ -21,5 +23,5 @@ module.exports = {
         }]
     ],
 
-    ignore: ['**/*.spec.ts']
+    ignore: ['./src/@types/*']
 }

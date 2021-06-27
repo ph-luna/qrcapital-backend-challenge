@@ -23,7 +23,7 @@ class ListOpinionByAuthor {
       sum += tweet.compound
     }
 
-    const avg = Math.floor((sum / tweets.length) * 100) / 100
+    const avg = Math.round((sum / tweets.length) * 100) / 100
     const opinion = avg < 0 ? 'negative' : 'positive'
 
     return { opinion, avg }
