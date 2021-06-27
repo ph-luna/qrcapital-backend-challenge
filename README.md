@@ -1,11 +1,11 @@
 # Desafio: QR Capital Backend Pleno
 
-Desafio proposto pela QR Capital, consiste basicamente em criar uma **RestAPI** para cadastrar comentários (Tweets) de pessoas e avaliar sua opinião utilizando um modelo de análise de sentimentos de textos **VADER**, cadastrar a pontuação e depois retornar em um **EndPoint** pesquisando pelo nome, a opinião média (positiva ou negativa) e a pontuação média.
+Desafio proposto pela QR Capital, consiste basicamente em criar uma **RestAPI** para cadastrar comentários (Tweets) de pessoas e avaliar sua opinião utilizando um modelo de análise de sentimentos de textos **VADER**, cadastrar a pontuação e depois retornar em um **EndPoint** pesquisando pelo nome, a opinião (positiva ou negativa) e a pontuação média.
 
 ## Disclaimer
 
 Nesse projeto utilizei **Typescript**, **Express.Js** e **PostGres**, **Babel** como compilador/transpilador e **Jest** para executar teste automatizados.   
-Também utilizei arquitetura **DDD (Domain Driven Design)** seguindo os princípios **SOLID**. Os testes apenas testam a execução dos serviços e como estão isolado a execução acaba sendo _"pura"_ permitindo que seja testado o **input/output** de cada serviço.
+Também utilizei arquitetura **DDD (Domain Driven Design)** seguindo os princípios **SOLID**. Os testes apenas testam a execução dos serviços e como estes estão isolado a execução acaba sendo _"pura"_ permitindo que seja testado o **output** de cada serviço.
 ## Commandos
 
 Para executar o projeto instale as dependencias utilizando o comando _yarn_ na raíz do projeto.
@@ -20,7 +20,7 @@ yarn start #Executa a versão transpilada
 yarn test #Executa os testes da aplicação
 ```
 
-URL base da API: **http://localhost:7777/**
+URL base da API: **http://localhost:7777    **
 
 Não é necessário instanciar serviço de banco de dados visto que o projeto utiliza um serviço online de banco de dados PostGres gratuito [ElephantSQL](https://www.elephantsql.com)
 
@@ -39,9 +39,6 @@ Rota para cadastrar novo **tweet**: http://localhost:7777/tweets
 ```
 
 Rota para listar opinião do autor: http://localhost:7777/{nome_do_autor}
-## Testes
-
-Utilizei testes unitários
 
 
 Qualquer dúvida é só enfiar um email para: **ph.luna.vieira@gmail.com**
