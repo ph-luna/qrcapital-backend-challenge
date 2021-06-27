@@ -22,7 +22,7 @@ yarn test #Executa os testes da aplicação
 
 URL base da API: **http://localhost:7777**
 
-Não é necessário instanciar serviço de banco de dados visto que o projeto utiliza um serviço online de banco de dados PostGres gratuito [ElephantSQL](https://www.elephantsql.com)
+Não é necessário instanciar serviço de banco de dados visto que o projeto utiliza um serviço online de banco de dados **PostGres gratuito** [ElephantSQL](https://www.elephantsql.com)
 
 
 ## Rotas
