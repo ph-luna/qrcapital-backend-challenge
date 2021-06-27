@@ -1,9 +1,17 @@
 import { Request, Response } from 'express'
+import { container } from 'tsyringe'
+
+import IPostTweetDTO from '@modules/Tweets/DTOS/IPostTweetDTO'
+
+import CreateTweetService from '@modules/Tweets/services/CreateTweetService'
 
 export default class TweetsController {
   async create (req: Request, res: Response): Promise<Response> {
-    const { body } = req
+    const { author, text, link } = req.body as IPostTweetDTO
+    const createTweetService = container.resolve(CreateTweetService)
 
-    return res.json({ body })
+    const message = await createTweetService.execute({ author, text, link })
+
+    return res.json({ message })
   }
 }

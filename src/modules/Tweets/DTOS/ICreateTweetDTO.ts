@@ -1,5 +1,4 @@
-export default interface ITweet {
-    id: string
+export default interface ICreateTweetDTO {
     author: string
     text: string
     link: string

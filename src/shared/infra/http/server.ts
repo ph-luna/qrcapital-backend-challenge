@@ -1,5 +1,8 @@
-import express from 'express'
+import 'reflect-metadata'
 import '@shared/typeorm'
+import '@shared/containers'
+
+import express from 'express'
 
 import Routes from './routes'
 import validateJsonBody from './middlewares/validateJsonBody'
