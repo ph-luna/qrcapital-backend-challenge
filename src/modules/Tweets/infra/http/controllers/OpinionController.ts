@@ -11,6 +11,6 @@ export default class OpinionController {
 
     const opinion = await listOpinionByAuthorService.execute(author)
 
-    res.json({ opinion })
+    res.json(opinion)
   }
 }
