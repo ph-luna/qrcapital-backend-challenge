@@ -15,7 +15,7 @@ class ListOpinionByAuthor {
   async execute (author: string): Promise<IOpinion> {
     const tweets = await this.tweetsRepository.listByAuthor(author)
 
-    if (tweets.length === 0) throw new ServerError('Autor não encontrado.')
+    if (tweets.length === 0) throw new ServerError('Autor não encontrado.', 404)
 
     let sum = 0
 

@@ -4,14 +4,12 @@ Desafio proposto pela QR Capital, consiste basicamente em criar uma **RestAPI** 
 
 ## Disclaimer
 
-Nesse projeto utilizei **Typescript**, **Express.Js** e **PostGres**, **Babel** como compilador/transpilador e **Jest** para executar teste automatizados.  
+Nesse projeto utilizei **Typescript, Express.Js, PostGres e o Babel** como compilador/transpilador e **Jest** para executar teste automatizados.  
 Também utilizei arquitetura **DDD (Domain Driven Design)** seguindo os princípios **SOLID**. Os testes apenas testam a execução dos serviços e como estes estão isolado a execução acaba sendo _"pura"_ permitindo que seja testado o **output** de cada serviço.
 
-A rota de envio de Tweet contém validação json, enviar paramêtros errados retornará um erro 400. Já a rota de validação retornará um erro 404 se pesquisado um usuário que não existe.
+O projeto utiliza o TypeORM e por isso está configurado para funcionar com o conceito de **migrations**. Utilização o comando **yarn typeorm** é possível executar os comandos que a **CLI** do typeorm suporta, mais informações [TypeORM CLI](https://typeorm.io/#/using-cli).
 
-O projeto utiliza o TypeORM e por isso está configurado para funcionar com o conceito de **_migrations_**, utilização o comando **_yarn typeorm_** é possível executar os comandos que a **CLI** do typeorm suporta, mais informações [TypeORM CLI](https://typeorm.io/#/using-cli).
-
-Lembrando que caso queira conectar a um banco de dados (PostGres) próprio é necessário configurar a conexão dentro do arquivo **/shared/typeorm/index.ts** e em seguida executar o comando **_yarn typeorm migrations:run_** para executar todas as migrations e configurar as tabelas de acordo com o que o servidor espera.
+Lembrando que caso queira conectar a um banco de dados (PostGres) próprio é necessário configurar a conexão dentro do arquivo **ormconfig.json** e em seguida executar o comando **yarn typeorm migrations:run** para executar todas as migrations e configurar as tabelas de acordo com o que o servidor espera.
 
 ## Commandos
 
@@ -34,6 +32,8 @@ URL base da API: **http://localhost:7777**
 Não é necessário instanciar serviço de banco de dados visto que o projeto utiliza um serviço online de banco de dados **PostGres gratuito** [ElephantSQL](https://www.elephantsql.com)
 
 ## Rotas
+
+A rota de envio de Tweet contém **validação json**, enviar paramêtros errados retornará um erro 400. Já a rota de validação retornará um erro 404 se pesquisado um usuário que não existe.
 
 Rota para cadastrar novo **tweet**: [POST] http://localhost:7777/tweets
 
